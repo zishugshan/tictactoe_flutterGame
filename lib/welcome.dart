@@ -69,7 +69,7 @@ class _WelcomeState extends State<Welcome > {
                           color: Colors.white,
                         )
                         : Text(
-                          "Play",
+                          "Lets Play",
                           style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
