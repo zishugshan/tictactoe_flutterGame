@@ -45,12 +45,12 @@ class _HomePageState extends State<HomePage> {
     setState(() {
       if (activePlayer == 1) {
         gb.text = "X";
-        gb.bg = Colors.cyan;
+        gb.bg = Color(0xFFfc03e3);
         activePlayer = 2;
         player1.add(gb.id);
       } else {
         gb.text = "0";
-        gb.bg = Colors.blue;
+        gb.bg = Color(0xFF0303fc);
         activePlayer = 1;
         player2.add(gb.id);
       }
@@ -177,9 +177,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
+      backgroundColor: Color(0xFFb3ffed),
         appBar: new AppBar(
           title: new Text("Null Cross Play"),
-          backgroundColor: Color(0xfff0b2bb),
+          backgroundColor: Colors.black,
         ),
         body: new Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -216,9 +217,9 @@ class _HomePageState extends State<HomePage> {
             new RaisedButton(
               child: new Text(
                 "Reset",
-                style: new TextStyle(color: Colors.red, fontSize: 20.0),
+                style: new TextStyle(color: Colors.white, fontSize: 20.0),
               ),
-              color: Color(0xfff0b2bb),
+              color:  Colors.black,
               padding: const EdgeInsets.all(20.0),
               onPressed: resetGame,
             )

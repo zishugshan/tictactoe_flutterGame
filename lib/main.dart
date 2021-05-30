@@ -10,15 +10,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       themeMode: ThemeMode.light,
-      theme: ThemeData(primarySwatch: Colors.deepPurple),
+      theme: ThemeData(primarySwatch: Colors.red[800]),
       darkTheme: ThemeData(
         brightness: Brightness.dark,
       ),
       initialRoute: "/",
       routes: {
-        "/":(context)=>Welcome(),
-        MyRoutes.homeRoute:(context)=>HomePage(),
-        MyRoutes.welcomeRoute:(context)=>Welcome()
+        "/": (context) => Welcome(),
+        MyRoutes.homeRoute: (context) => HomePage(),
+        MyRoutes.welcomeRoute: (context) => Welcome()
       },
     );
   }

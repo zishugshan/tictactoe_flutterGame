@@ -7,7 +7,8 @@ class Welcome extends StatefulWidget {
 }
 
 class _WelcomeState extends State<Welcome> {
-  String name = "";
+  String name1 = "";
+  String name2 = "";
   bool changeButton = false;
   final _formKey = GlobalKey<FormState>();
 
@@ -33,31 +34,60 @@ class _WelcomeState extends State<Welcome> {
             key: _formKey,
             child: Column(
               children: [
-                Image.asset(
-                  "assets/images/welcome.jpeg",
-                  fit: BoxFit.cover,
-                ),
                 SizedBox(
                   height: 20.0,
                 ),
-                Text(
-                  "Lets start $name",
-                  style: TextStyle(
-                    fontSize: 28,
-                    fontWeight: FontWeight.bold,
+                Image.asset(
+                  "assets/images/welcome.jpeg",
+                  fit: BoxFit.contain,
+                ),
+                SizedBox(
+                  height: 2.0,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 30.0,left: 30.0),
+                  child: Column(
+                    children: 
+                    [
+                      Text(
+                      "$name1",
+                      style: TextStyle(
+                        color: Color(0xFFfc03e3),
+                        fontSize: 26,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                      Text(
+                      "V/s",
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 26,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                      Text(
+                      "$name2",
+                      style: TextStyle(
+                        color: Color(0xFFfc03e3),
+                        fontSize: 26,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+
+                    ],
                   ),
                 ),
                 SizedBox(
-                  height: 20.0,
+                  height: 2.0,
                 ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
-                      vertical: 16.0, horizontal: 32.0),
+                      vertical: 5.0, horizontal: 32.0),
                   child: Column(
                     children: [
                       TextFormField(
                         decoration: InputDecoration(
-                          hintText: "Enter Your Nmae",
+                          hintText: "Enter Your Name",
                           labelText: "YourName",
                         ),
                         validator: (value) {
@@ -67,7 +97,23 @@ class _WelcomeState extends State<Welcome> {
                           return null;
                         },
                         onChanged: (value) {
-                          name = value;
+                          name1 = value;
+                          setState(() {});
+                        },
+                      ),
+                      TextFormField(
+                        decoration: InputDecoration(
+                          hintText: "Enter Your opponent/computer Name",
+                          labelText: "OpponentName",
+                        ),
+                        validator: (value) {
+                          if (value.isEmpty) {
+                            return "Your OpponentName cannot be empty";
+                          }
+                          return null;
+                        },
+                        onChanged: (value2) {
+                          name2 = value2;
                           setState(() {});
                         },
                       ),
@@ -75,7 +121,7 @@ class _WelcomeState extends State<Welcome> {
                         height: 40.0,
                       ),
                       Material(
-                        color: Colors.deepPurple,
+                        color: Colors.black,
                         borderRadius:
                             BorderRadius.circular(changeButton ? 50 : 8),
                         child: InkWell(

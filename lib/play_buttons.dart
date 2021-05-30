@@ -7,5 +7,5 @@ class PlayButtons {
   bool enabled;
 
   PlayButtons(
-      {this.id, this.text = "", this.bg = Colors.grey, this.enabled = true});
+      {this.id, this.text = "", this.bg = Colors.white, this.enabled = true});
 }
